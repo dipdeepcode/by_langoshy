@@ -1,12 +1,13 @@
 <div class="app_background container-fluid h-100">
 
-  <ng-container *ngIf="!router.isActive('login', false)">
+  @if (!router.isActive('login', false)) {
     <div class="row">
       <div class="w-100">
         <p>tm-header</p>
       </div>
     </div>
-  </ng-container>
+  }
 
   <router-outlet></router-outlet>
+
 </div>
