@@ -57,12 +57,12 @@ export class LoginComponent {
 
   get isLoginEnabled(): boolean {
     return (
-      !!this.loginUri && !this.authService.current.isAuthenticated
+      !!this.loginUri && !this.authService.userinfo.isAuthenticated
     );
   }
 
   get isAuthenticated(): boolean {
-    return this.authService.current.isAuthenticated;
+    return this.authService.userinfo.isAuthenticated;
   }
 
   login() {
@@ -92,7 +92,7 @@ export class LoginComponent {
   onIframeLoad(event: any) {
     if (!!event.currentTarget.src) {
       this.authService.refresh();
-      this.isLoginModalDisplayed = !this.authService.current.isAuthenticated;
+      this.isLoginModalDisplayed = !this.authService.userinfo.isAuthenticated;
     }
   }
 

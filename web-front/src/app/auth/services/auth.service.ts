@@ -84,7 +84,7 @@ export class AuthService {
     return this.user$;
   }
 
-  get current(): Userinfo {
+  get userinfo(): Userinfo {
     return this.user$.value;
   }
 

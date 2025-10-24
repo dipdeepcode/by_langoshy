@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
-import {AuthService, Userinfo} from '../auth/services/auth.service';
+import {AuthService} from '../auth/services/auth.service';
 
 @Component({
   selector: 'tm-header',
@@ -10,18 +9,17 @@ import {AuthService, Userinfo} from '../auth/services/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
-  public userName = '';/*StringUtils.EMPTY;*/
+  public userName: string | undefined;
 
-  constructor(private authService: AuthService,
-              private router: Router) {
+  constructor(private authService: AuthService) {
   }
 
   public ngOnInit(): void {
-    this.userName = 'this.userName';/*this.authService.getUser().username;*/
+    this.userName = this.authService.userinfo.name;
   }
 
   get isAuthenticated(): boolean {
-    return this.authService.current.isAuthenticated;
+    return this.authService.userinfo.isAuthenticated;
   }
 
 }
