@@ -1,0 +1,7 @@
+<div>
+  <ul class="main-menu">
+    @for (item of menuItems; track item.idx) {
+      <tm-menu-item [item]="item"></tm-menu-item>
+    }
+  </ul>
+</div>
