@@ -1,18 +1,21 @@
 <header class="header-page">
   <div class="row g-0 align-items-center">
     <div class="col-xl-7 col-md-6 col-sm-6 col-8 text-start ps-3 ps-sm-0">
-      <tm-menu></tm-menu>
+<!--      @if (isAuthenticated) {-->
+        <tm-menu></tm-menu>
+<!--      }-->
     </div>
 
     <div class="col-xl-5 col-md-4 col-sm-3 col-4 ms-auto">
       <div class="user-login d-flex justify-content-end align-items-center">
-        <span class="d-none d-lg-inline-block me-2">{{userName}}</span>
-        <button class="user-login__button" routerLink="users">
-          <i class="fa fa-cog"></i>
-        </button>
-        <button (click)="logout()" class="user-login__button">
-          <i class="fa fa-power-off"></i>
-        </button>
+        <span class="d-none d-lg-inline-block me-2">{{ userName }}</span>
+        <span>
+          @if (isAuthenticated) {
+            <tm-logout></tm-logout>
+          } @else {
+            <tm-login></tm-login>
+          }
+        </span>
       </div>
     </div>
   </div>
