@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {map, Observable} from 'rxjs';
+import {map} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 import {DomSanitizer, SafeUrl} from '@angular/platform-browser';
