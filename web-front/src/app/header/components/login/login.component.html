@@ -1,12 +1,11 @@
 <span>
-  <button (click)="login()" [disabled]="!isLoginEnabled" class="link menu-item">Login</button>
+  <button (click)="login()" [disabled]="!isLoginEnabled" class="link login-menu-item">Login</button>
 </span>
 
 @if (isLoginModalDisplayed && !isAuthenticated) {
-  <div class="modal-overlay" (click)="isLoginModalDisplayed = false">
-    <div class="modal">
+  <div class="login-modal-overlay" (click)="isLoginModalDisplayed = false">
+    <div class="login-modal">
       <iframe [src]="iframeSrc" (load)="onIframeLoad($event)"></iframe>
-      <button class="close-button" (click)="isLoginModalDisplayed = false">Discard</button>
     </div>
   </div>
 }

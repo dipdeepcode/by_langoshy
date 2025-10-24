@@ -1,13 +1,6 @@
 <div class="app_background container-fluid h-100">
 
-  @if (!router.isActive('login', false)) {
-    <div class="row">
-      <div class="w-100">
-        <tm-header></tm-header>
-      </div>
-    </div>
-  }
-
+  <tm-header></tm-header>
   <app-home></app-home>
   <router-outlet></router-outlet>
 
